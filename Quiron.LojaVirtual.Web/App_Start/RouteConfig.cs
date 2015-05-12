@@ -13,6 +13,13 @@ namespace Quiron.LojaVirtual.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //Alterar a rota para deixar a url de pagina mais simples/legivel
+            routes.MapRoute(
+                name: null,
+                url: "Pagina{Pagina}",
+                defaults: new {controller = "Vitrine", action = "ListaProdutos"}
+                );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
